@@ -1,0 +1,220 @@
+[gd_scene format=3 uid="uid://bsmgyhn60dom4"]
+
+[ext_resource type="Script" uid="uid://mjqp7enimhib" path="res://scripts/enemy.gd" id="1_iifgy"]
+[ext_resource type="Texture2D" uid="uid://djlw4hdccysei" path="res://assets/Sprite Pack 2/6 - Robo Totem/Armored_Walking (16 x 32).png" id="2_epg4t"]
+[ext_resource type="Texture2D" uid="uid://cxvyl3okkqdxn" path="res://assets/Sprite Pack 2/6 - Robo Totem/Hurt (16 x 16).png" id="3_3yqyl"]
+[ext_resource type="Texture2D" uid="uid://bx7a1oyv1wbri" path="res://assets/Sprite Pack 2/6 - Robo Totem/Armored_Standing (16 x 32).png" id="4_wujgv"]
+[ext_resource type="PackedScene" uid="uid://cku7y4dbb55mq" path="res://area_2d.tscn" id="5_epg4t"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g0eit"]
+size = Vector2(20, 5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1yqc4"]
+size = Vector2(24.749996, 20)
+
+[sub_resource type="Animation" id="Animation_hb8ge"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_epg4t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_e1ltt"]
+resource_name = "hurt"
+length = 0.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("3_3yqyl")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666669),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_dxifv"]
+resource_name = "standing"
+length = 0.5
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("4_wujgv")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [1]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.16666669),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_pwjut"]
+resource_name = "walk"
+length = 0.19999999999999998
+loop_mode = 1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("texture:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("2_epg4t")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("texture:hframes")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.46674454),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [2]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("texture:frame")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0.03333333, 0.099999994),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [0, 1]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_n0g06"]
+_data = {
+&"RESET": SubResource("Animation_hb8ge"),
+&"hurt": SubResource("Animation_e1ltt"),
+&"standing": SubResource("Animation_dxifv"),
+&"walk": SubResource("Animation_pwjut")
+}
+
+[node name="CharacterBody2D" type="CharacterBody2D" unique_id=2129804275]
+visibility_layer = 3
+position = Vector2(3, 2)
+script = ExtResource("1_iifgy")
+
+[node name="Hitbox" parent="." unique_id=1768625703 instance=ExtResource("5_epg4t")]
+collision_layer = 127
+
+[node name="colision2" type="CollisionShape2D" parent="Hitbox" unique_id=1838380582]
+position = Vector2(108, 165)
+shape = SubResource("RectangleShape2D_g0eit")
+debug_color = Color(0.8804159, 0.25833994, 0.5601909, 0.41960785)
+
+[node name="texture" type="Sprite2D" parent="." unique_id=1209068400]
+position = Vector2(-91, -39)
+scale = Vector2(2, 1.249999)
+texture = ExtResource("2_epg4t")
+offset = Vector2(100, 167)
+hframes = 2
+
+[node name="colision" type="CollisionShape2D" parent="." unique_id=1822692703 groups=["enemies"]]
+light_mask = 127
+visibility_layer = 127
+position = Vector2(109, 178)
+scale = Vector2(0.96969694, 1.2121203)
+shape = SubResource("RectangleShape2D_1yqc4")
+
+[node name="anim" type="AnimationPlayer" parent="." unique_id=1002266780 groups=["enemies"]]
+libraries/ = SubResource("AnimationLibrary_n0g06")
+autoplay = &"standing"
+
+[node name="walk_detector" type="RayCast2D" parent="." unique_id=1507189668]
+light_mask = 6
+visibility_layer = 2
+position = Vector2(109, 174)
+target_position = Vector2(-15, -1)
+collide_with_areas = true
